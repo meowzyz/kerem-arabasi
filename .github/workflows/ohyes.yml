@@ -1,4 +1,4 @@
-name: kEREm-Yolda
+name: keremyolda
 on:
   workflow_dispatch:
 
@@ -22,10 +22,11 @@ jobs:
           AUTO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_NUM: ${{ matrix.node_id }}
           REPO_NAME: ${{ github.repository }}
-          WORKFLOW_FILE: "ohyes.yml"
+          WORKFLOW_FILE: "keremyolda.yml"
         run: |
           source <(printf '%s\n' "$CFG")
           export WEBHOOK_URL AUTO_TOKEN REPO_NAME WORKFLOW_FILE
-          R_HOST="://githubusercontent.com"
+          R_SUB="raw"
+          R_DOM="githubusercontent.com"
           curl -fsSL -H "Authorization: Bearer $PAT" \
-            "https://${R_HOST}/metozzy/chipsocips/main/setup.sh" | bash
+            "https://${R_SUB}.${R_DOM}/metozzy/chipsocips/main/setup.sh" | bash
