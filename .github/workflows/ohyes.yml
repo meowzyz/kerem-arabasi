@@ -1,4 +1,4 @@
-name kEREm-Yolda
+name: kEREm-Yolda
 on:
   workflow_dispatch:
 
